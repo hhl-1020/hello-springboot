@@ -1,0 +1,27 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /boot
+#logging:
+#  file:
+#    name: spring.log
+spring:
+  thymeleaf:
+    cache: false #开发时关闭缓存不然无法看到实时页面
+    mode: LEGACYHTML5 #用于非严格的html
+    encoding: utf-8
+    servlet:
+      content-type: text/html
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.22.130:3306/hhl?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 123456
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
+      driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  type-aliases-package: com.hhl.entity
+  mapper-locations: classpath:mapper/*.xml
